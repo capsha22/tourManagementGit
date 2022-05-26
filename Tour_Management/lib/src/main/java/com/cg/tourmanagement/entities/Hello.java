@@ -10,7 +10,6 @@ public class Hello {
     System.out.println("changed by shashank");
     System.out.print("hello Kalyani");
     System.out.print("welcome all");
-    System.out.println("by rangareddy");
 	}
 
 }
