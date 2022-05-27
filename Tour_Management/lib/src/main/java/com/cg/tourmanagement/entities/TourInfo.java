@@ -11,6 +11,8 @@ public class TourInfo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int reserevdPackageId;
+	@Column(name="packagename",length=30)
+	private String  packageName;
 	@Column(name="description",length=30)
 	private String description;
 	@Column(name="startdate",length=10)
