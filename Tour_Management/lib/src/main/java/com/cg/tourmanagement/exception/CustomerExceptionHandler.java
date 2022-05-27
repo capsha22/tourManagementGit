@@ -1,4 +1,4 @@
-package com.cg.tourmanagement.Exception;
+package com.cg.tourmanagement.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

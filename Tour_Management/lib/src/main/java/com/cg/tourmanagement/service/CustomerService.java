@@ -4,11 +4,11 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.cg.tourmanagement.Exception.CustomerPasswordException;
-import com.cg.tourmanagement.Exception.CustomerUserIdAlreadyExistsException;
 import com.cg.tourmanagement.entities.Customer;
 import com.cg.tourmanagement.entities.TourInfo;
 import com.cg.tourmanagement.entities.TourInformationSystem;
+import com.cg.tourmanagement.exception.CustomerPasswordException;
+import com.cg.tourmanagement.exception.CustomerUserIdAlreadyExistsException;
 
 @Service
 public interface CustomerService {
