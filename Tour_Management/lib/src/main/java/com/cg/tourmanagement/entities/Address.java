@@ -24,7 +24,7 @@ public class Address {
 	private String street;
 	@OneToOne
 	
-	private Customer customerId;
+	private Customer customer;
 	public int getId() {
 		return id;
 	}
@@ -55,11 +55,11 @@ public class Address {
 	public void setStreet(String street) {
 		this.street = street;
 	}
-	public Customer getCustomerId() {
-		return customerId;
+	public Customer getCustomer() {
+		return customer;
 	}
-	public void setCustomerId(Customer customerId) {
-		this.customerId = customerId;
+	public void setCustomerId(Customer customer) {
+		this.customer = customer;
 	}
 	
 	

@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -19,6 +21,9 @@ public class Staff {
 	private String password;
 	@Column(name="modeofpayment",length=30)
 	private String modeOfPayment;
+	@OneToOne
+	@JoinColumn(name="reserevdPackageId")
+	private TourInfo tourinfo;
 	public Staff(String userId, String password, String modeOfPayment) {
 		super();
 		this.userId = userId;

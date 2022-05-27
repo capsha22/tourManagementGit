@@ -1,46 +1,24 @@
-package com.cg.tourmanagement.entities;
+package com.cg.tourmanagement.dto;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import com.cg.tourmanagement.entities.TourInfo;
+import com.cg.tourmanagement.entities.TourInformationSystem;
 
-@Entity
-@Table(name="customer")
 public class Customer {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String customerId;
-	@Column(name="user_id",length=30)
 	private String userId;
-	@Column(name="password")
 	private int password;
-	@Column(name="firstname",length=30)
 	private String firstName;
-	@Column(name="lastname",length=30)
 	private String lastName;
-	@Column(name="mobileno")
 	private long mobileNo;
-	@Column(name="age")
 	private int age;
-	@Column(name="gender",length=10)	
 	private String gender;
-	@Column(name="modeofpayment",length=30)
 	private String modeOfPayment;
-	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
 	private  TourInformationSystem Tour;
-	@OneToOne
-	@JoinColumn(name="reserevdPackageId")
 	private TourInfo tourinfo;
 	
 	public Customer(String customerId, String userId, int password, String firstName, String lastName, long mobileNo,
 			int age, String gender, String modeOfPayment, TourInformationSystem tour, TourInfo tourinfo) {
+		
 		this.customerId = customerId;
 		this.userId = userId;
 		this.password = password;
@@ -53,6 +31,12 @@ public class Customer {
 		Tour = tour;
 		this.tourinfo = tourinfo;
 	}
+	public String getCustomerId() {
+		return customerId;
+	}
+	public void setCustomerId(String customerId) {
+		this.customerId = customerId;
+	}
 	public String getUserId() {
 		return userId;
 	}
@@ -64,18 +48,6 @@ public class Customer {
 	}
 	public void setPassword(int password) {
 		this.password = password;
-	}
-	public TourInfo getTourinfo() {
-		return tourinfo;
-	}
-	public void setTourinfo(TourInfo tourinfo) {
-		this.tourinfo = tourinfo;
-	}
-	public String getCustomerId() {
-		return customerId;
-	}
-	public void setCustomerId(String customerId) {
-		this.customerId = customerId;
 	}
 	public String getFirstName() {
 		return firstName;
@@ -119,5 +91,12 @@ public class Customer {
 	public void setTour(TourInformationSystem tour) {
 		Tour = tour;
 	}
-    
+	public TourInfo getTourinfo() {
+		return tourinfo;
+	}
+	public void setTourinfo(TourInfo tourinfo) {
+		this.tourinfo = tourinfo;
+	}
+	
+	
 }
