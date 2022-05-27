@@ -4,7 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 public class TourInfo {
 	@Id
@@ -26,8 +27,69 @@ public class TourInfo {
 	private String modeOfTransportation;
 	@Column(name="hotel",length=30)
 	private String hotel;
-	@ManyToMany
-	
+	@OneToOne
+	@JoinColumn(name="packageId")
 	private  TourInformationSystem tour;
+	public int getReserevdPackageId() {
+		return reserevdPackageId;
+	}
+	public void setReserevdPackageId(int reserevdPackageId) {
+		this.reserevdPackageId = reserevdPackageId;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public String getStartDate() {
+		return startDate;
+	}
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+	}
+	public String getEndDate() {
+		return endDate;
+	}
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+	}
+	public int getNoOfPersons() {
+		return noOfPersons;
+	}
+	public void setNoOfPersons(int noOfPersons) {
+		this.noOfPersons = noOfPersons;
+	}
+	public int getNumberOfDays() {
+		return numberOfDays;
+	}
+	public void setNumberOfDays(int numberOfDays) {
+		this.numberOfDays = numberOfDays;
+	}
+	public double getAmountPerPerson() {
+		return amountPerPerson;
+	}
+	public void setAmountPerPerson(double amountPerPerson) {
+		this.amountPerPerson = amountPerPerson;
+	}
+	public String getModeOfTransportation() {
+		return modeOfTransportation;
+	}
+	public void setModeOfTransportation(String modeOfTransportation) {
+		this.modeOfTransportation = modeOfTransportation;
+	}
+	public String getHotel() {
+		return hotel;
+	}
+	public void setHotel(String hotel) {
+		this.hotel = hotel;
+	}
+	public TourInformationSystem getTour() {
+		return tour;
+	}
+	public void setTour(TourInformationSystem tour) {
+		this.tour = tour;
+	}
+	
 
 }

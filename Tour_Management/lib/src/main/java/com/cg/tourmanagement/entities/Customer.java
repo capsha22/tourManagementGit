@@ -11,6 +11,10 @@ public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String customerId;
+	@Column(name="user_id",length=30)
+	private String userId;
+	@Column(name="password")
+	private int password;
 	@Column(name="firstname",length=30)
 	private String firstName;
 	@Column(name="lastname",length=30)
