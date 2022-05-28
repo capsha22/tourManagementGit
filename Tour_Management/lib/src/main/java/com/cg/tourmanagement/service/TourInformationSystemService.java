@@ -11,7 +11,7 @@ public interface TourInformationSystemService {
 	void addPackage (TourInformationSystem tour) throws TourInformationSystemAlreadyExistException;
 	List<TourInformationSystem> viewAllTours();
 	Optional<TourInformationSystem> getTourById(int packageId) throws TourInformationSystemNotFoundException;
-	void updateDepartment(TourInformationSystem tour);
-	void deleteDepartment(int deptno);
+	void updateTourInformationSystem(TourInformationSystem tour);
+	void deleteTourInformationSystem(int packageId);
 
 }
