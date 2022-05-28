@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -23,7 +24,7 @@ public class Address {
 	@Column(name="street")
 	private String street;
 	@OneToOne
-	
+	@JoinColumn(name="customerId")
 	private Customer customer;
 	public int getId() {
 		return id;
@@ -61,6 +62,7 @@ public class Address {
 	public void setCustomerId(Customer customer) {
 		this.customer = customer;
 	}
+	
 	
 	
 	

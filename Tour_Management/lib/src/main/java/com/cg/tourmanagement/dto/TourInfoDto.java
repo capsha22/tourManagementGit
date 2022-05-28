@@ -4,7 +4,7 @@ import java.util.Date;
 
 import com.cg.tourmanagement.entities.TourInformationSystem;
 
-public class TuroInfo {
+public class TourInfoDto {
 	private int reserevdPackageId;
 	private String  packageName;
 	private String description;
@@ -14,9 +14,9 @@ public class TuroInfo {
 	private int numberOfDays;
 	private String modeOfTransportation;
 	private String hotel;
-	private  TourInformationSystem tour;
-	public TuroInfo(int reserevdPackageId, String packageName, String description, Date startDate, Date endDate,
-			int noOfPersons, int numberOfDays, String modeOfTransportation, String hotel, TourInformationSystem tour) {
+	private  int packageId;
+	public TourInfoDto(int reserevdPackageId, String packageName, String description, Date startDate, Date endDate,
+			int noOfPersons, int numberOfDays, String modeOfTransportation, String hotel, int packageId) {
 		this.reserevdPackageId = reserevdPackageId;
 		this.packageName = packageName;
 		this.description = description;
@@ -26,7 +26,7 @@ public class TuroInfo {
 		this.numberOfDays = numberOfDays;
 		this.modeOfTransportation = modeOfTransportation;
 		this.hotel = hotel;
-		this.tour = tour;
+		this.packageId = packageId;
 		
 	}
 	public int getReserevdPackageId() {
@@ -83,11 +83,11 @@ public class TuroInfo {
 	public void setHotel(String hotel) {
 		this.hotel = hotel;
 	}
-	public TourInformationSystem getTour() {
-		return tour;
+	public int getPackageId() {
+		return packageId;
 	}
-	public void setTour(TourInformationSystem tour) {
-		this.tour = tour;
+	public void setPackageId(int packageId) {
+		this.packageId = packageId;
 	}
 	
 }
