@@ -62,6 +62,7 @@ public class CustomerServiceImpl implements CustomerService{
 		
 		
 		
+		
 	}
 
 	@Override
@@ -78,7 +79,7 @@ public class CustomerServiceImpl implements CustomerService{
 
 	@Override
 	public void cancelRegistration(int customerId) {
-    custrepo.deleteById(customerId);
+		// TODO Auto-generated method stub
 		
 	}
 
