@@ -48,7 +48,17 @@ public class CustomerServiceImpl implements CustomerService{
 	public void AddPackage(TourInfoDto tourinfodto) {
 		TourInformationSystem tour=tourrepo.getpackageId(tourinfodto.getPackageId());
 		
-		
+		TourInfo tourinfo=new TourInfo();
+		tourinfo.setPackageName(tourinfodto.getPackageName());
+		tourinfo.setNoOfPersons(tourinfodto.getNoOfPersons());
+		tourinfo.setNumberOfDays(tourinfodto.getNumberOfDays());
+		tourinfo.setStartDate(tourinfodto.getStartDate());
+		tourinfo.setEndDate(tourinfodto.getEndDate());
+		tourinfo.setModeOfTransportation(tourinfodto.getModeOfTransportation());
+		tourinfo.setHotel(tourinfodto.getHotel());
+		tourinfo.setDescription(tourinfodto.getDescription());
+		tourinfo.setTour(tour);
+		tourinforepo.save(tourinfo);
 		
 		
 		
