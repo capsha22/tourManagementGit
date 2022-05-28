@@ -8,10 +8,10 @@ import com.cg.tourmanagement.exception.TourInformationSystemAlreadyExistExceptio
 import com.cg.tourmanagement.exception.TourInformationSystemNotFoundException;
 
 public interface TourInformationSystemService {
-	void addPackage (TourInformationSystem tour) throws TourInformationSystemAlreadyExistException;
-	List<TourInformationSystem> viewAllTours();
-	Optional<TourInformationSystem> getTourById(int packageId) throws TourInformationSystemNotFoundException;
-	void updateDepartment(TourInformationSystem tour);
-	void deleteDepartment(int deptno);
+//	void addPackage (TourInformationSystem tour) throws TourInformationSystemAlreadyExistException;
+//	List<TourInformationSystem> viewAllTours();
+//	Optional<TourInformationSystem> getTourById(int packageId) throws TourInformationSystemNotFoundException;
+//	void updateDepartment(TourInformationSystem tour);
+//	void deleteDepartment(int deptno);
 
 }

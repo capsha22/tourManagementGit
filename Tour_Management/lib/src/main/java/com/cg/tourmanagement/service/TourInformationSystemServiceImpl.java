@@ -12,11 +12,11 @@ public class TourInformationSystemServiceImpl implements TourInformationSystemSe
 	@Autowired
 	TourInformationSystemRepository tourrepo;
 
-	@Override
-	public void addPackage(TourInformationSystem tour) {
-		tourrepo.save(tour);
+//	@Override
+//	public void addPackage(TourInformationSystem tour) {
+//		tourrepo.save(tour);
 		
-	}
+//	}
 	
 
 }

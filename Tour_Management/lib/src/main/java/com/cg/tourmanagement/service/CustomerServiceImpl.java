@@ -11,8 +11,6 @@ import com.cg.tourmanagement.dto.TourInfoDto;
 import com.cg.tourmanagement.entities.Customer;
 import com.cg.tourmanagement.entities.TourInfo;
 import com.cg.tourmanagement.entities.TourInformationSystem;
-import com.cg.tourmanagement.exception.CustomerPasswordException;
-import com.cg.tourmanagement.exception.CustomerUserIdAlreadyExistsException;
 import com.cg.tourmanagement.repository.CustomerRepository;
 import com.cg.tourmanagement.repository.TourInfoRepository;
 import com.cg.tourmanagement.repository.TourInformationSystemRepository;
@@ -39,7 +37,6 @@ public class CustomerServiceImpl implements CustomerService{
 		cust.setUserId(custdto.getUserId());
 		cust.setPassword(custdto.getPassword());
 		cust.setModeOfPayment(custdto.getModeOfPayment());
-		cust.setTour(tour);
 		cust.setTourinfo(tourinfo);
 		custrepo.save(cust);
 		
@@ -50,6 +47,8 @@ public class CustomerServiceImpl implements CustomerService{
 	@Override
 	public void AddPackage(TourInfoDto tourinfodto) {
 		TourInformationSystem tour=tourrepo.getpackageId(tourinfodto.getPackageId());
+		
+		
 		
 		
 		

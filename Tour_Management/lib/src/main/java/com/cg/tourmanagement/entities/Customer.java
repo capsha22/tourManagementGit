@@ -16,7 +16,7 @@ import javax.persistence.Table;
 public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String customerId;
+	private int customerId;
 	@Column(name="user_id",length=30)
 	private String userId;
 	@Column(name="password")
@@ -33,8 +33,6 @@ public class Customer {
 	private String gender;
 	@Column(name="modeofpayment",length=30)
 	private String modeOfPayment;
-	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-	private  TourInformationSystem tour;
 	@OneToOne
 	@JoinColumn(name="reserevdPackageId")
 	private TourInfo  tourinfo;
@@ -43,8 +41,8 @@ public class Customer {
 	public Customer() {
 		
 	}
-	public Customer(String customerId, String userId, int password, String firstName, String lastName, long mobileNo,
-			int age, String gender, String modeOfPayment, TourInformationSystem tour, TourInfo tourinfo) {
+	public Customer(int customerId, String userId, int password, String firstName, String lastName, long mobileNo,
+			int age, String gender, String modeOfPayment, TourInfo tourinfo) {
 		this.customerId = customerId;
 		this.userId = userId;
 		this.password = password;
@@ -55,7 +53,6 @@ public class Customer {
 		this.gender = gender;
 		this.modeOfPayment = modeOfPayment;
 		this.tourinfo = tourinfo;
-		this.tour = tour;
 	}
 	public String getUserId() {
 		return userId;
@@ -70,10 +67,11 @@ public class Customer {
 		this.password = password;
 	}
 	
-	public String getCustomerId() {
+	
+	public int getCustomerId() {
 		return customerId;
 	}
-	public void setCustomerId(String customerId) {
+	public void setCustomerId(int customerId) {
 		this.customerId = customerId;
 	}
 	public String getFirstName() {
@@ -113,12 +111,7 @@ public class Customer {
 		this.modeOfPayment = modeOfPayment;
 	}
 	
-	public TourInformationSystem getTour() {
-		return tour;
-	}
-	public void setTour(TourInformationSystem tour) {
-		this.tour = tour;
-	}
+	
 	public TourInfo getTourinfo() {
 		return tourinfo;
 	}
