@@ -16,7 +16,7 @@ import javax.persistence.Table;
 public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String customerId;
+	private int customerId;
 	@Column(name="user_id",length=30)
 	private String userId;
 	@Column(name="password")
@@ -33,14 +33,16 @@ public class Customer {
 	private String gender;
 	@Column(name="modeofpayment",length=30)
 	private String modeOfPayment;
-	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-	private  TourInformationSystem Tour;
 	@OneToOne
 	@JoinColumn(name="reserevdPackageId")
-	private TourInfo tourinfo;
+	private TourInfo  tourinfo;
 	
-	public Customer(String customerId, String userId, int password, String firstName, String lastName, long mobileNo,
-			int age, String gender, String modeOfPayment, TourInformationSystem tour, TourInfo tourinfo) {
+	
+	public Customer() {
+		
+	}
+	public Customer(int customerId, String userId, int password, String firstName, String lastName, long mobileNo,
+			int age, String gender, String modeOfPayment, TourInfo tourinfo) {
 		this.customerId = customerId;
 		this.userId = userId;
 		this.password = password;
@@ -50,7 +52,6 @@ public class Customer {
 		this.age = age;
 		this.gender = gender;
 		this.modeOfPayment = modeOfPayment;
-		Tour = tour;
 		this.tourinfo = tourinfo;
 	}
 	public String getUserId() {
@@ -65,16 +66,12 @@ public class Customer {
 	public void setPassword(int password) {
 		this.password = password;
 	}
-	public TourInfo getTourinfo() {
-		return tourinfo;
-	}
-	public void setTourinfo(TourInfo tourinfo) {
-		this.tourinfo = tourinfo;
-	}
-	public String getCustomerId() {
+	
+	
+	public int getCustomerId() {
 		return customerId;
 	}
-	public void setCustomerId(String customerId) {
+	public void setCustomerId(int customerId) {
 		this.customerId = customerId;
 	}
 	public String getFirstName() {
@@ -113,11 +110,13 @@ public class Customer {
 	public void setModeOfPayment(String modeOfPayment) {
 		this.modeOfPayment = modeOfPayment;
 	}
-	public TourInformationSystem getTour() {
-		return Tour;
+	
+	
+	public TourInfo getTourinfo() {
+		return tourinfo;
 	}
-	public void setTour(TourInformationSystem tour) {
-		Tour = tour;
+	public void setTourinfo(TourInfo tourinfo) {
+		this.tourinfo = tourinfo;
 	}
-    
+	
 }

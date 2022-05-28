@@ -1,37 +1,25 @@
-package com.cg.tourmanagement.entities;
+package com.cg.tourmanagement.dto;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="tourinformationsystem")
-
-public class TourInformationSystem {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class TourInformationSystemDto {
+	
 	private int packageId;
-	@Column(name="packagename",length=30)
 	private String packageName;
-	@Column(name="description",length=30)
 	private String description;
-	@Column(name="no_of_days")
-	private int numberOfDays;
-	@Column(name="amount_per_person")
-	private double amountPerPerson;
-	@Column(name="transportation",length=10)
+    private int numberOfDays;
+    private double amountPerPerson;
 	private String modeOfTransportation;
-	@Column(name="hotel",length=30)
 	private String hotel;
-	@OneToOne
-	@JoinColumn(name="customerId")
-	private Customer customer;
+	public TourInformationSystemDto(int packageId, String packageName, String description, int numberOfDays,
+			double amountPerPerson, String modeOfTransportation, String hotel) {
+		super();
+		this.packageId = packageId;
+		this.packageName = packageName;
+		this.description = description;
+		this.numberOfDays = numberOfDays;
+		this.amountPerPerson = amountPerPerson;
+		this.modeOfTransportation = modeOfTransportation;
+		this.hotel = hotel;
+	}
 	public int getPackageId() {
 		return packageId;
 	}
@@ -74,13 +62,4 @@ public class TourInformationSystem {
 	public void setHotel(String hotel) {
 		this.hotel = hotel;
 	}
-	public Customer getCustomer() {
-		return customer;
-	}
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
-	
-	
-
 }
