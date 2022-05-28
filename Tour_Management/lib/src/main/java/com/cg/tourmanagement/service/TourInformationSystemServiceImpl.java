@@ -1,17 +1,29 @@
 package com.cg.tourmanagement.service;
 
+<<<<<<< Updated upstream
 import java.util.List;
 import java.util.Optional;
+=======
+import java.util.ArrayList;
+>>>>>>> Stashed changes
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cg.tourmanagement.entities.TourInfo;
 import com.cg.tourmanagement.entities.TourInformationSystem;
+<<<<<<< Updated upstream
 
 import com.cg.tourmanagement.exception.TourInformationSystemAlreadyExistException;
 
 import com.cg.tourmanagement.exception.TourInformationSystemNotFoundException;
+=======
+import com.cg.tourmanagement.repository.CustomerRepository;
+import com.cg.tourmanagement.repository.TourInfoRepository;
+>>>>>>> Stashed changes
 import com.cg.tourmanagement.repository.TourInformationSystemRepository;
+
+import antlr.collections.List;
 
 @Service
 public class TourInformationSystemServiceImpl implements TourInformationSystemService {
@@ -27,6 +39,7 @@ public class TourInformationSystemServiceImpl implements TourInformationSystemSe
 		tourrepo.save(tour);		
 		
 	}
+<<<<<<< Updated upstream
 
 //	@Override
 //	//public List<TourInformationSystem> viewAllTours1() {
@@ -81,3 +94,13 @@ public class TourInformationSystemServiceImpl implements TourInformationSystemSe
 //
 //
 //
+=======
+    
+	
+	
+	
+
+	
+	}
+
+>>>>>>> Stashed changes
