@@ -2,14 +2,14 @@ package com.cg.tourmanagement.dto;
 
 import com.cg.tourmanagement.entities.Customer;
 
-public class Address {
+public class AddressDto {
 	private int id;
 	private String city;
 	private  String state;
 	private int pincode;
 	private Customer customer;
 	
-	public Address(int id, String city, String state, int pincode, Customer customer) {
+	public AddressDto(int id, String city, String state, int pincode, Customer customer) {
 
 		this.id = id;
 		this.city = city;
