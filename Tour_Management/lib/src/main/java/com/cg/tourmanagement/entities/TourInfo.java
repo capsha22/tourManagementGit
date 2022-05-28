@@ -84,12 +84,7 @@ public class TourInfo {
 	public void setHotel(String hotel) {
 		this.hotel = hotel;
 	}
-	public TourInformationSystem getTour() {
-		return tour;
-	}
-	public void setTour(TourInformationSystem tour) {
-		this.tour = tour;
-	}
+	
 	public String getPackageName() {
 		return packageName;
 	}
@@ -108,6 +103,15 @@ public class TourInfo {
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
+	public TourInformationSystem getTour() {
+		return tour;
+	}
+	public void setTour(TourInformationSystem tour) {
+		this.tour = tour;
+	}
+	
+	
+	
 	
 
 }

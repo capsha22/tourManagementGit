@@ -3,7 +3,7 @@ package com.cg.tourmanagement.dto;
 import com.cg.tourmanagement.entities.TourInfo;
 import com.cg.tourmanagement.entities.TourInformationSystem;
 
-public class Customer {
+public class CustomerDto {
 	private String customerId;
 	private String userId;
 	private int password;
@@ -13,11 +13,11 @@ public class Customer {
 	private int age;
 	private String gender;
 	private String modeOfPayment;
-	private  TourInformationSystem Tour;
-	private TourInfo tourinfo;
+	private  int packageId;
+	private int reserevdPackageId;
 	
-	public Customer(String customerId, String userId, int password, String firstName, String lastName, long mobileNo,
-			int age, String gender, String modeOfPayment, TourInformationSystem tour, TourInfo tourinfo) {
+	public CustomerDto(String customerId, String userId, int password, String firstName, String lastName, long mobileNo,
+			int age, String gender, String modeOfPayment, int packageId, int reserevdPackageId) {
 		
 		this.customerId = customerId;
 		this.userId = userId;
@@ -28,8 +28,8 @@ public class Customer {
 		this.age = age;
 		this.gender = gender;
 		this.modeOfPayment = modeOfPayment;
-		Tour = tour;
-		this.tourinfo = tourinfo;
+		this.packageId = packageId;
+		this.reserevdPackageId = reserevdPackageId;
 	}
 	public String getCustomerId() {
 		return customerId;
@@ -85,18 +85,20 @@ public class Customer {
 	public void setModeOfPayment(String modeOfPayment) {
 		this.modeOfPayment = modeOfPayment;
 	}
-	public TourInformationSystem getTour() {
-		return Tour;
+	public int getPackageId() {
+		return packageId;
 	}
-	public void setTour(TourInformationSystem tour) {
-		Tour = tour;
+	public void setPackageId(int packageId) {
+		this.packageId = packageId;
 	}
-	public TourInfo getTourinfo() {
-		return tourinfo;
+	public int getReserevdPackageId() {
+		return reserevdPackageId;
 	}
-	public void setTourinfo(TourInfo tourinfo) {
-		this.tourinfo = tourinfo;
+	public void setReserevdPackageId(int reserevdPackageId) {
+		this.reserevdPackageId = reserevdPackageId;
 	}
+	
+	
 	
 	
 }
