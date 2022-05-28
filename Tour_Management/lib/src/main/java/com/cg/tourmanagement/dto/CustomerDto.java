@@ -4,7 +4,7 @@ import com.cg.tourmanagement.entities.TourInfo;
 import com.cg.tourmanagement.entities.TourInformationSystem;
 
 public class CustomerDto {
-	private String customerId;
+	private int customerId;
 	private String userId;
 	private int password;
 	private String firstName;
@@ -16,7 +16,7 @@ public class CustomerDto {
 	private  int packageId;
 	private int reserevdPackageId;
 	
-	public CustomerDto(String customerId, String userId, int password, String firstName, String lastName, long mobileNo,
+	public CustomerDto(int  customerId, String userId, int password, String firstName, String lastName, long mobileNo,
 			int age, String gender, String modeOfPayment, int packageId, int reserevdPackageId) {
 		
 		this.customerId = customerId;
@@ -31,12 +31,15 @@ public class CustomerDto {
 		this.packageId = packageId;
 		this.reserevdPackageId = reserevdPackageId;
 	}
-	public String getCustomerId() {
+	
+	public int getCustomerId() {
 		return customerId;
 	}
-	public void setCustomerId(String customerId) {
+
+	public void setCustomerId(int customerId) {
 		this.customerId = customerId;
 	}
+
 	public String getUserId() {
 		return userId;
 	}
