@@ -1,106 +1,65 @@
 package com.cg.tourmanagement.service;
 
-<<<<<<< Updated upstream
 import java.util.List;
 import java.util.Optional;
-=======
-import java.util.ArrayList;
->>>>>>> Stashed changes
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cg.tourmanagement.entities.TourInfo;
 import com.cg.tourmanagement.entities.TourInformationSystem;
-<<<<<<< Updated upstream
-
 import com.cg.tourmanagement.exception.TourInformationSystemAlreadyExistException;
-
 import com.cg.tourmanagement.exception.TourInformationSystemNotFoundException;
-=======
-import com.cg.tourmanagement.repository.CustomerRepository;
-import com.cg.tourmanagement.repository.TourInfoRepository;
->>>>>>> Stashed changes
 import com.cg.tourmanagement.repository.TourInformationSystemRepository;
-
-import antlr.collections.List;
 
 @Service
 public class TourInformationSystemServiceImpl implements TourInformationSystemService {
 
 	@Autowired
 	TourInformationSystemRepository tourrepo;
+
 	@Override
-	public void addPackage(TourInformationSystem tour){
+	public void addPackage(TourInformationSystem tour)  {
 		Optional<TourInformationSystem> tourinformationsystem = tourrepo.findById(tour.getPackageId());
 		System.out.println(tourinformationsystem);
 		if(!tourinformationsystem.isEmpty())
 			throw new TourInformationSystemAlreadyExistException();
-		tourrepo.save(tour);		
+		tourrepo.save(tour);	
 		
 	}
-<<<<<<< Updated upstream
 
-//	@Override
-//	//public List<TourInformationSystem> viewAllTours1() {
-//	
-//		return tourrepo.findAll();
-//	}
-//
-//	@Override
-//	public Optional<TourInformationSystem> getTourById(int packageId){
-//		Optional<TourInformationSystem> tour = tourrepo.findById(packageId);
-//		if(tour.isEmpty())
-//			throw new TourInformationSystemNotFoundException();
-//		return tour;
-//	
-//	}
-//
-//	@Override
-//	public void updateTourInformationSystem(TourInformationSystem tour) {
-//		tourrepo.save(tour);
-//		
-//	}
-//
-//	@Override
-//<<<<<<< HEAD
-//	public List<TourInformationSystem> viewAllTours() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public Optional<TourInformationSystem> getTourById(int packageId) throws TourInformationSystemNotFoundException {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public void updateDepartment(TourInformationSystem tour) {
-//		// TODO Auto-generated method stub
-//		
-//	}
-//
-//	@Override
-//	public void deleteDepartment(int deptno) {
-//		// TODO Auto-generated method stub
-//=======
-//	public void deleteTourInformationSystem(int packageId) {
-//		tourrepo.deleteById(packageId);
-//>>>>>>> 028e796f595da142e593f5324fcd9ae873881d67
-//		
-}
-//	
-//
-//
-//
-=======
-    
-	
-	
-	
-
+	@Override
+	public List<TourInformationSystem> viewAllTours() {
+		return tourrepo.findAll();
 	
 	}
 
->>>>>>> Stashed changes
+	@Override
+	public Optional<TourInformationSystem> getTourById(int packageId) throws TourInformationSystemNotFoundException {
+		Optional<TourInformationSystem> tour = tourrepo.findById(packageId);
+		if(tour.isEmpty())
+			throw new TourInformationSystemNotFoundException();
+		return tour;
+	}
+
+	@Override
+	public void updateTourInformationSystem(TourInformationSystem tour) {
+		tourrepo.save(tour);
+		
+	}
+
+	@Override
+	public void deleteTourInformationSystem(int packageId) {
+		tourrepo.deleteById(packageId);
+		
+	}
+
+	
+		
+	
+	
+	
+	
+	
+
+
+}
