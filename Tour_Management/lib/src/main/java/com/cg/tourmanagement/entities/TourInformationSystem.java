@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -28,7 +29,7 @@ public class TourInformationSystem {
 	private String modeOfTransportation;
 	@Column(name="hotel",length=30)
 	private String hotel;
-	@ManyToOne
+	@OneToOne
 	@JoinColumn(name="customerId")
 	private Customer customer;
 	public int getPackageId() {
