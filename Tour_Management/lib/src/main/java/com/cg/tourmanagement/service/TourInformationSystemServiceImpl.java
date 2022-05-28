@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cg.tourmanagement.entities.TourInfo;
 import com.cg.tourmanagement.entities.TourInformationSystem;
 
 import com.cg.tourmanagement.exception.TourInformationSystemAlreadyExistException;
@@ -27,7 +28,6 @@ public class TourInformationSystemServiceImpl implements TourInformationSystemSe
 		tourrepo.save(tour);		
 		
 	}
-
 //	@Override
 //	//public List<TourInformationSystem> viewAllTours1() {
 //	
