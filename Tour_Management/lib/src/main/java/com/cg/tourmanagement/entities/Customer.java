@@ -6,7 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -32,7 +34,42 @@ public class Customer {
 	@Column(name="modeofpayment",length=30)
 	private String modeOfPayment;
 	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-	private  TourInformationSystem Tour;
+	private  TourInformationSystem tour;
+	@OneToOne
+	@JoinColumn(name="reserevdPackageId")
+	private TourInfo  tourinfo;
+	
+	
+	public Customer() {
+		
+	}
+	public Customer(String customerId, String userId, int password, String firstName, String lastName, long mobileNo,
+			int age, String gender, String modeOfPayment, TourInformationSystem tour, TourInfo tourinfo) {
+		this.customerId = customerId;
+		this.userId = userId;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.mobileNo = mobileNo;
+		this.age = age;
+		this.gender = gender;
+		this.modeOfPayment = modeOfPayment;
+		this.tourinfo = tourinfo;
+		this.tour = tour;
+	}
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+	public int getPassword() {
+		return password;
+	}
+	public void setPassword(int password) {
+		this.password = password;
+	}
+	
 	public String getCustomerId() {
 		return customerId;
 	}
@@ -75,11 +112,18 @@ public class Customer {
 	public void setModeOfPayment(String modeOfPayment) {
 		this.modeOfPayment = modeOfPayment;
 	}
+	
 	public TourInformationSystem getTour() {
-		return Tour;
+		return tour;
 	}
 	public void setTour(TourInformationSystem tour) {
-		Tour = tour;
+		this.tour = tour;
 	}
-    
+	public TourInfo getTourinfo() {
+		return tourinfo;
+	}
+	public void setTourinfo(TourInfo tourinfo) {
+		this.tourinfo = tourinfo;
+	}
+	
 }
