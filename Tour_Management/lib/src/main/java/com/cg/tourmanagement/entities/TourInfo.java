@@ -155,4 +155,7 @@ public class TourInfo {
 		Status = status;
 		this.tour = tour;
 	}
+
+	public TourInfo() {
+	}
 }

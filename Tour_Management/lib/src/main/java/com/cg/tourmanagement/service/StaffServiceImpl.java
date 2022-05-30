@@ -37,15 +37,21 @@ public class StaffServiceImpl implements StaffService {
 	public List<TourInfo> getAllTour() {
 		return trRepo.findAll();
 	}
-	
+
 	@Override
 	public boolean Confirm(int id) {
-		int cnt = trRepo.Confirm(id);
-		if(cnt != 1) {
-			return false;
-		} else {
-			return true;
-		}
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+//	@Override
+//	public boolean Confirm(int id) {
+////		boolean cnt = ((StaffServiceImpl) trRepo).Confirm(id);
+////		if(cnt != 1) {
+////			return false;
+////		} else {
+////			return true;
+//		}
 	}
 /*
 	@Override
@@ -84,4 +90,4 @@ public class StaffServiceImpl implements StaffService {
 		
 	}
 	*/
-}
+

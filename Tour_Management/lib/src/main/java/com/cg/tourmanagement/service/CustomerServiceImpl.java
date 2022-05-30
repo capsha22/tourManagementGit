@@ -67,19 +67,23 @@ public class CustomerServiceImpl implements CustomerService{
 
 	@Override
 	public void updateTourInfo(TourInfo tourinfo) {
+		TourInfo tour=new TourInfo();
+		tourinforepo.save(tour);
 		
 		
 	}
 
 	@Override
-	public Optional<TourInfo> reserevdPackageId(int reserevdPackageId) {
+	public Optional<TourInfo> viewreserevdPackageById(int reserevdPackageId) {
+		Optional<TourInfo>tourinfo=tourinforepo.findById( reserevdPackageId);
 		
-		return null;
+		return tourinfo;
 	}
 
 	@Override
 	public void cancelRegistration(int customerId) {
-		// TODO Auto-generated method stub
+		Customer cust=custrepo.getBycustId(customerId);
+		custrepo.delete(cust);
 		
 	}
 

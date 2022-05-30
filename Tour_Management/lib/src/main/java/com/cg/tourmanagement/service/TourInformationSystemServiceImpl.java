@@ -17,20 +17,15 @@ public class TourInformationSystemServiceImpl implements TourInformationSystemSe
 	@Autowired
 	TourInformationSystemRepository tourrepo;
 
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
 
-	@Override
-	public void addPackage(TourInformationSystem tour)  {
-			
-=======
->>>>>>> 9559b98d0bf7573eaaba30cdb466facab9774174
+
+
+	
+
 	@Override
 	public void addPackage(TourInformationSystem tour)  {
 		
->>>>>>> 1977a701b305e157902da376b30cb3efae532c60
 		
 	}
 
@@ -66,10 +61,7 @@ public class TourInformationSystemServiceImpl implements TourInformationSystemSe
 	
 	
 	
-<<<<<<< HEAD
 
-=======
->>>>>>> 9559b98d0bf7573eaaba30cdb466facab9774174
 	
 
 

@@ -17,7 +17,7 @@ public interface CustomerService {
 	List<TourInformationSystem> getpackageName();
 	void AddPackage(TourInfoDto tourinfodto);
 	void updateTourInfo(TourInfo tourinfo);
-	Optional<TourInfo> reserevdPackageId(int reserevdPackageId);
+	Optional<TourInfo> viewreserevdPackageById(int reserevdPackageId);
 	void cancelRegistration(int customerId );
 
 }
