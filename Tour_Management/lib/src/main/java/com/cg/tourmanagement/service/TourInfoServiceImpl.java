@@ -13,10 +13,18 @@ public class TourInfoServiceImpl implements TourInfoService{
 
 	@Autowired
 	TourInfoRepository tourinforepo;
+	
+	
+	public TourInfoServiceImpl(TourInfoRepository tourinforepo) {
+		super();
+		this.tourinforepo = tourinforepo;
+	}
+
+
 	@Override
 	public List<TourInfo> viewAllReservedTourPackages() {
 		// TODO Auto-generated method stub
-		return ((JpaRepository<TourInfo,Integer>) tourinforepo).findAll();
+		return  tourinforepo.findAll();
 	}
 
 }
