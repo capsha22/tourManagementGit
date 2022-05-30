@@ -17,13 +17,7 @@ public class TourInformationSystemServiceImpl implements TourInformationSystemSe
 	@Autowired
 	TourInformationSystemRepository tourrepo;
 
-<<<<<<< HEAD
-//	@Override
-//	public void addPackage(TourInformationSystem tour) {
-//		tourrepo.save(tour);
-		
-//	}
-=======
+
 	@Override
 	public void addPackage(TourInformationSystem tour)  {
 		Optional<TourInformationSystem> tourinformationsystem = tourrepo.findById(tour.getPackageId());
@@ -66,7 +60,7 @@ public class TourInformationSystemServiceImpl implements TourInformationSystemSe
 	
 	
 	
->>>>>>> ff68cb3da84262f377a80b91e87d1269845e88c4
+
 	
 
 

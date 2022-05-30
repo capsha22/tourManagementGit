@@ -19,17 +19,28 @@ public class Staff {
 			sequenceName = "pwd_code_gen", allocationSize =35)
 	@GeneratedValue(generator = "pwd_seq", strategy = GenerationType.SEQUENCE)
 	private String password;
+	
+	
 	@Column(name="modeofpayment",length=30)
 	private String modeOfPayment;
 	@OneToOne
 	@JoinColumn(name="reserevdPackageId")
 	private TourInfo tourinfo;
+	
+	
 	public Staff(String userId, String password, String modeOfPayment) {
 		super();
 		this.userId = userId;
 		this.password = password;
 		this.modeOfPayment = modeOfPayment;
 	}
+
+	public Staff(String userId, String password) {
+		super();
+		this.userId = userId;
+		this.password = password;
+	}
+
 	public String getUserId() {
 		return userId;
 	}

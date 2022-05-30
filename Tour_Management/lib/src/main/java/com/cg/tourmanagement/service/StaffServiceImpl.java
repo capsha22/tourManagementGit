@@ -1,23 +1,53 @@
 package com.cg.tourmanagement.service;
 
-import java.util.Optional;
-
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.cg.tourmanagement.entities.Staff;
 import com.cg.tourmanagement.entities.TourInfo;
 import com.cg.tourmanagement.exception.StaffPasswordException;
 import com.cg.tourmanagement.exception.StaffUserIdAlreadyExistsException;
+import com.cg.tourmanagement.repository.StaffRepository;
+import com.cg.tourmanagement.repository.TourInfoRepository;
 
 @Service 
 public class StaffServiceImpl implements StaffService {
 
+	@Autowired
+	StaffRepository stfRepo;
+	
+	@Autowired
+	TourInfoRepository trRepo;
+	
 	@Override
-	public void addStaff(Staff staff) throws StaffUserIdAlreadyExistsException, StaffPasswordException {
-		// TODO Auto-generated method stub
-		
+	public Staff addStaff(Staff staff) throws StaffUserIdAlreadyExistsException, StaffPasswordException {
+		Staff staf = stfRepo.save(staff);
+		return staf;	
 	}
-
+	
+	@Override
+	public Staff ValidateUser(Staff user) {
+		String uid = user.getUserId();
+		String pwd = user.getPassword();
+		Staff st = stfRepo.Login(uid, pwd);
+		return st;
+	}
+	
+	@Override
+	public List<TourInfo> getAllTour() {
+		return trRepo.findAll();
+	}
+	
+	@Override
+	public boolean Confirm(int id) {
+		int cnt = trRepo.Confirm(id);
+		if(cnt != 1) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+/*
 	@Override
 	public Optional<Staff> getUserId(String userId) {
 		// TODO Auto-generated method stub
@@ -48,4 +78,10 @@ public class StaffServiceImpl implements StaffService {
 		
 	}
 
+	@Override
+	public void getPassword(TourInfo viewPackage) {
+		// TODO Auto-generated method stub
+		
+	}
+	*/
 }

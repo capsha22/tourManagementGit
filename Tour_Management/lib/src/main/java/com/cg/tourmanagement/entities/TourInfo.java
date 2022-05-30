@@ -1,7 +1,5 @@
 package com.cg.tourmanagement.entities;
 
-
-
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -16,6 +14,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="tourinfo")
 public class TourInfo {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int reserevdPackageId;
@@ -37,6 +36,14 @@ public class TourInfo {
 	private String modeOfTransportation;
 	@Column(name="hotel",length=30)
 	private String hotel;
+	
+	@Column(name="PayMode",length=30)
+	private String PayMode; //Payment method usued to book the hotels or any other resources
+	//Online, Cash, Card, Upi
+	
+	@Column(name="Status",length=30)
+	private String Status; //Booking Status
+	
 	@OneToOne
 	@JoinColumn(name="packageId")
 	private  TourInformationSystem tour;
@@ -44,12 +51,15 @@ public class TourInfo {
 	public int getReserevdPackageId() {
 		return reserevdPackageId;
 	}
+	
 	public void setReserevdPackageId(int reserevdPackageId) {
 		this.reserevdPackageId = reserevdPackageId;
 	}
+	
 	public String getDescription() {
 		return description;
 	}
+	
 	public void setDescription(String description) {
 		this.description = description;
 	}
@@ -57,9 +67,11 @@ public class TourInfo {
 	public int getNoOfPersons() {
 		return noOfPersons;
 	}
+	
 	public void setNoOfPersons(int noOfPersons) {
 		this.noOfPersons = noOfPersons;
 	}
+	
 	public int getNumberOfDays() {
 		return numberOfDays;
 	}
@@ -109,9 +121,38 @@ public class TourInfo {
 	public void setTour(TourInformationSystem tour) {
 		this.tour = tour;
 	}
-	
-	
-	
-	
-
+	public TourInfo(int reserevdPackageId) {
+		super();
+		this.reserevdPackageId = reserevdPackageId;
+	}
+	public String getPayMode() {
+		return PayMode;
+	}
+	public void setPayMode(String payMode) {
+		PayMode = payMode;
+	}
+	public String getStatus() {
+		return Status;
+	}
+	public void setStatus(String status) {
+		Status = status;
+	}
+	public TourInfo(int reserevdPackageId, String packageName, String description, Date startDate, Date endDate,
+			int noOfPersons, int numberOfDays, double amountPerPerson, String modeOfTransportation, String hotel,
+			String payMode, String status, TourInformationSystem tour) {
+		super();
+		this.reserevdPackageId = reserevdPackageId;
+		this.packageName = packageName;
+		this.description = description;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.noOfPersons = noOfPersons;
+		this.numberOfDays = numberOfDays;
+		this.amountPerPerson = amountPerPerson;
+		this.modeOfTransportation = modeOfTransportation;
+		this.hotel = hotel;
+		PayMode = payMode;
+		Status = status;
+		this.tour = tour;
+	}
 }
