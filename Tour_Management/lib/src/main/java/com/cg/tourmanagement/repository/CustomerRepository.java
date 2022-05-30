@@ -5,4 +5,5 @@ import com.cg.tourmanagement.entities.Customer;
 
 public interface CustomerRepository extends JpaRepository<Customer, Integer>{
 	
+	
 }
